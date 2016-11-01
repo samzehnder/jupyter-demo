@@ -14,6 +14,7 @@ RUN ln -s $CONDA_DIR/envs/python2/bin/pip $CONDA_DIR/bin/pip2 && \
     ln -s $CONDA_DIR/bin/pip $CONDA_DIR/bin/pip3
 RUN pip2 install ipykernel
 RUN pip2 install requests
+RUN pip2 install cs
 RUN $CONDA_DIR/envs/python2/bin/python -m ipykernel install
 
 

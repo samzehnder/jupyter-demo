@@ -3,6 +3,11 @@ FROM jupyter/minimal-notebook
 MAINTAINER zehnder@netcloud.ch
 
 USER root
+RUN apt-get update \
+ && apt-get install -yq --no-install-recommends \
+    openssh-client \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 RUN pip install bash_kernel && python -m bash_kernel.install
 
